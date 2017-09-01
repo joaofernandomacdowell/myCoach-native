@@ -1,4 +1,4 @@
-const questions = [
+const questionsData = [
   { gender: 'Are you...' },
   { shape: 'How do you consider yourself?' },
   { objective: 'What is your main objective?' },
@@ -6,7 +6,7 @@ const questions = [
   { time: 'How much time do you want to invest in workout daily?' }
 ];
 
-const options = [
+const optionsData = [
   {
     gender: [
       'MALE',
@@ -44,4 +44,4 @@ const options = [
   }
 ];
 
-export { questions, options };
+export { questionsData, optionsData };

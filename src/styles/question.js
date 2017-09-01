@@ -1,15 +1,17 @@
 import { StyleSheet } from 'react-native';
 
-const question = StyleSheet.create({
+const questionStyles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
+    alignSelf: 'center',
     justifyContent: 'center',
-    paddingTop: 200,
+    marginTop: 160,
+    width: 300,
   },
-  questionTextStyle: {
+  text: {
     color: '#fff',
-    fontSize: 20
+    fontSize: 20,
+    textAlign: 'center'
   }
 });
 
-export default question;
+export default questionStyles;
