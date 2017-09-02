@@ -1,5 +1,6 @@
 const data = {
   gender: {
+    id: 1,
     quest: 'Are you...',
     opts: [
       'MALE',
@@ -7,6 +8,7 @@ const data = {
     ]
   },
   shape: {
+    id: 2,
     quest: 'How do you consider yourself?',
     opts: [
       'TOTALLY IN SHAPE',
@@ -15,6 +17,7 @@ const data = {
     ]
   },
   objective: {
+    id: 3,
     quest: 'What is your main objective?',
     opts: [
       'PHYSICAL HEALTH',
@@ -24,6 +27,7 @@ const data = {
     ]
   },
   badHabits: {
+    id: 4,
     quest: 'Do you have any bad habits?',
     opts: [
       'I\'M A SMOKER',
@@ -33,6 +37,7 @@ const data = {
     ]
   },
   time: {
+    id: 5,
     quest: 'How much time do you want to invest in workout daily?',
     opts: [
       '30-60 MINUTES',
@@ -40,4 +45,5 @@ const data = {
     ]
   }
 }
- export default data;
+
+export default data;
