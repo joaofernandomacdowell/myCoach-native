@@ -6,9 +6,7 @@ import options from '../../styles/options';
 
 const Option = (props) => (
   <View style={optionsStyles.container}>
-    <ButtonOption onPress={props.onPress}>
-      {props.buttonText}
-    </ButtonOption>
+    {props.children}
   </View>
 );
 
