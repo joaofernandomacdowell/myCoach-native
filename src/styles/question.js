@@ -5,11 +5,11 @@ const questionStyles = StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
     marginTop: 160,
-    width: 300,
+    width: 300
   },
   text: {
     color: '#fff',
-    fontSize: 20,
+    fontSize: 22,
     textAlign: 'center'
   }
 });

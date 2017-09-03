@@ -7,7 +7,7 @@ const optionsStyles = StyleSheet.create({
     alignSelf: 'center',
     flexDirection: 'column',
     alignItems: 'center',
-    marginTop: 40,
+    marginTop: 40
   }
 });
 
