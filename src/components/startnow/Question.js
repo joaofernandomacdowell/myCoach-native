@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import questionStyles from '../../styles/question';
-import { questionsData } from '../../data/profile-questionnaire';
 
 const Question = (props) => (
   <View style={questionStyles.container}>
@@ -11,4 +10,4 @@ const Question = (props) => (
   </View>
 );
 
-export default Question;
+export { Question };
