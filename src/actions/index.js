@@ -1,15 +1,7 @@
-import { QUESTION_CHANGED, OPTIONS_CHANGED } from './types';
-
-export const questionChanged = (question) => {
+// props (this.props.selectOption)
+export const selectOption = (option) => {
   return {
-    type: QUESTION_CHANGED,
-    payload: question
-  };
-};
-
-export const optionsChanged = (options) => {
-  return {
-    type: OPTIONS_CHANGED,
+    type: 'select_option',
     payload: option
   };
 };
