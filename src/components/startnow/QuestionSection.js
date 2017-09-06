@@ -1,41 +1,18 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import { connect } from 'react-redux';
-import { questionChanged, optionsChanged } from '../../actions';
+import { selectOption } from '../../actions';
 import { ButtonOption, Option, Question } from './';
-import data from '../../data/questions-options-data';
-
 
 class QuestionSection extends Component {
   constructor(props) {
     super(props);
-
-    this.onPress = this.onPress.bind(this);
-    this.updateQuestion = this.updateQuestion.bind(this);
-    this.updateOptions = this.updateOptions.bind(this);
-  }
-
-  updateQuestion(question) {
-    this.props.questionChanged(question)
-  }
-
-  updateOptions(options) {
-    this.props.optionsChanged(options)
-  }
-
-  // updateProfile(profile) {
-  //   this.props.profileChanged(profile);
-  // }
-
-  onPress() {
-    // this.updateProfile()
-    this.onQuestionChange();
-    this.onOptionsChange();
   }
 
   renderOptions() {
-    return this.props.options.map(option =>
-      <ButtonOption value={option} onPress={this.onPress}>
+    const { id, question, options } = this.props;
+    return options.map(option =>
+      <ButtonOption onPress={() => this.props.selectOption(option)}>
         {option}
       </ButtonOption>
     );
@@ -53,10 +30,13 @@ class QuestionSection extends Component {
   }
 }
 
-const mapStateToProps = ({ profile }) => {
-  const { question, options } = profile;
-
-  return { question, options };
+// mocked data
+const mapStateToProps = state => {
+  return {
+    question: state.questionnarie[0].quest,
+    options: state.questionnarie[3].opts,
+    id: state.questionnarie[0].id
+  };
 };
 
-export default connect(mapStateToProps, { questionChanged, optionsChanged })(QuestionSection);
+export default connect(mapStateToProps, { selectOption })(QuestionSection);
