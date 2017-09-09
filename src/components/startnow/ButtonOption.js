@@ -10,7 +10,4 @@ const ButtonOption = (props) => (
   </TouchableOpacity>
 );
 
-export { ButtonOption };
-
-// <TouchableOpacity onPress={ () => props.onPress(props.value) } style={buttonOptionStyles.button}>
-// <TouchableOpacity onPress={props.onPress} style={buttonOptionStyles.button}>
+export default ButtonOption;

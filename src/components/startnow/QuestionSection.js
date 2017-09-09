@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import { View } from 'react-native';
 import { connect } from 'react-redux';
 import { selectOption } from '../../actions';
-import { ButtonOption, Option, Question } from './';
+
+import Question from './Question';
+import Option from './Option';
+import ButtonOption from './ButtonOption';
+
 
 class QuestionSection extends Component {
   constructor(props) {
