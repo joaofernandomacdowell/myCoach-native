@@ -3,25 +3,26 @@ import {
 } from '../actions/types';
 
 const INITIAL_STATE = {
-  question: '',
-  options: [],
   profile: {},
-  index: 0
+  currQuestionIndex: 0
 };
 
 export default (state = INITIAL_STATE, action) => {
-
   switch (action.type) {
     case SELECTED_OPTION:
+    const { type, option } = action.payload;
+    console.log('state = ', state.profile);
       return {
         ...state,
-        index: state.index + 1,
-        profile: {
-          ...state.profile,
-          [action.payload.type]: action.payload.option
-        }
+        currQuestionIndex: state.currQuestionIndex + 1,
+        profile: updateProfile(state.profile, type, option)
       };
     default:
       return state;
   }
 };
+
+const updateProfile = (currProfile, newType, newOption) => {
+  console.log('profile = ', {...currProfile, [newType]: newOption});
+  return {...currProfile, [newType]: newOption};
+}
