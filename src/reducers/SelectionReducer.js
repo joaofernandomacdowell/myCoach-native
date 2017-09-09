@@ -11,7 +11,6 @@ export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case SELECTED_OPTION:
     const { type, option } = action.payload;
-    console.log('state = ', state.profile);
       return {
         ...state,
         currQuestionIndex: state.currQuestionIndex + 1,
@@ -23,6 +22,5 @@ export default (state = INITIAL_STATE, action) => {
 };
 
 const updateProfile = (currProfile, newType, newOption) => {
-  console.log('profile = ', {...currProfile, [newType]: newOption});
   return {...currProfile, [newType]: newOption};
 }
