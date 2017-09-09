@@ -9,10 +9,16 @@ class QuestionSection extends Component {
     super(props);
   }
 
+  onPress(optionIndex) {
+    const { type, options } = this.props;
+    let option = options[optionIndex].toLowerCase();
+    this.props.selectOption({ type: type, option: option });
+  }
+
   renderOptions() {
-    const { id, question, options } = this.props;
-    return options.map(option =>
-      <ButtonOption onPress={() => this.props.selectOption(option)}>
+    const { options } = this.props;
+    return options.map((option, optionIndex) =>
+      <ButtonOption key={optionIndex} onPress={this.onPress.bind(this, optionIndex)}>
         {option}
       </ButtonOption>
     );
@@ -20,7 +26,7 @@ class QuestionSection extends Component {
 
   render() {
     return (
-      <View style={{flex: 1}}>
+      <View style={{ flex: 1 }}>
         <Question questionText={this.props.question} />
         <Option>
           {this.renderOptions()}
@@ -34,8 +40,9 @@ class QuestionSection extends Component {
 const mapStateToProps = state => {
   return {
     question: state.questionnarie[0].quest,
-    options: state.questionnarie[3].opts,
-    id: state.questionnarie[0].id
+    options: state.questionnarie[0].opts,
+    id: state.questionnarie[0].id,
+    type: state.questionnarie[0].type
   };
 };
 
