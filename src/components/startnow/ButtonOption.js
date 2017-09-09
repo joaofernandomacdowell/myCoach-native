@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
-import buttonOptionStyles from '../../styles/button-option';
+import buttonOptionStyles from '../../styles/startnow/button-option';
 
 const ButtonOption = (props) => (
   <TouchableOpacity onPress={props.onPress} style={buttonOptionStyles.button}>

@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { Colors } from '../constants';
 
 const questionStyles = StyleSheet.create({
   container: {
@@ -8,7 +9,7 @@ const questionStyles = StyleSheet.create({
     width: 300
   },
   text: {
-    color: '#fff',
+    color: Colors.textColor,
     fontSize: 22,
     textAlign: 'center'
   }
