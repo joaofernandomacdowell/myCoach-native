@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Alert } from 'react-native';
-import { optionsStyles } from '../../styles/startnow';
+import { optionsStyles } from './styles';
 
 const Option = (props) => (
   <View style={optionsStyles.container}>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
-import { questionStyles } from '../../styles/startnow';
+import { questionStyles } from './styles';
 
 const Question = (props) => (
   <View style={questionStyles.container}>
