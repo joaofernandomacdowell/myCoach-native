@@ -10,9 +10,9 @@ class QuestionSection extends Component {
   }
 
   onPress(optionIndex) {
-    const { type, options } = this.props;
+    const { type, options, selectOption } = this.props;
     let option = options[optionIndex].toLowerCase();
-    this.props.selectOption({ type: type, option: option });
+    selectOption({ type, option });
   }
 
   renderOptions() {
@@ -37,12 +37,13 @@ class QuestionSection extends Component {
 }
 
 // mocked data
-const mapStateToProps = state => {
+const mapStateToProps = ({ questionnarie, optionSelected }) => {
+  const { index } = optionSelected;
   return {
-    question: state.questionnarie[0].quest,
-    options: state.questionnarie[0].opts,
-    id: state.questionnarie[0].id,
-    type: state.questionnarie[0].type
+    question: questionnarie[index].quest,
+    options: questionnarie[index].opts,
+    id: questionnarie[index].id,
+    type: questionnarie[index].type
   };
 };
 
