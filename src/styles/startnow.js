@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { Colors } from './constants.js';
 
+// Question styles
 const questionStyles = StyleSheet.create({
   container: {
     alignSelf: 'center',
@@ -9,13 +10,14 @@ const questionStyles = StyleSheet.create({
     width: 300
   },
   text: {
-    color: Colors.textColor,
+    color: Colors.lightGrey,
     fontSize: 22,
     textAlign: 'center'
   }
 });
 
-const optionsStyles = StyleSheet.create({
+// Option styles
+const optionStyles = StyleSheet.create({
   container: {
     width: 300,
     height: 300,
@@ -26,18 +28,19 @@ const optionsStyles = StyleSheet.create({
   }
 });
 
+// Button styles
 const buttonOptionStyles = StyleSheet.create({
   text: {
     textAlign: 'center',
     justifyContent: 'center',
-    color: Colors.textColor,
+    color: Colors.lightGrey,
     fontSize: 16,
     paddingTop: 13,
     paddingBottom: 10
   },
   button: {
     borderWidth: 1,
-    borderColor: Colors.borderColor,
+    borderColor: Colors.lightGreen,
     height: 50,
     width: 250,
     marginTop: 10,
@@ -45,26 +48,4 @@ const buttonOptionStyles = StyleSheet.create({
   }
 });
 
-const inputStyles = StyleSheet.create({
-  inputStyle: {
-    color: '#000',
-    paddingRight: 5,
-    paddingLeft: 5,
-    fontSize: 18,
-    lineHeight: 23,
-    flex: 2
-  },
-  labelStyle: {
-    fontSize: 18,
-    paddingLeft: 20,
-    flex: 1
-  },
-  containerStyle: {
-    height: 40,
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center'
-  }
-});
-
-export { questionStyles, optionsStyles, buttonOptionStyles, inputStyles };
+export { questionStyles, optionStyles, buttonOptionStyles };
