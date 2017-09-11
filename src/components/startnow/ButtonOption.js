@@ -2,12 +2,16 @@ import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 import { buttonOptionStyles } from '../../styles/startnow';
 
-const ButtonOption = (props) => (
-  <TouchableOpacity onPress={props.onPress} style={buttonOptionStyles.button}>
-    <Text style={buttonOptionStyles.text}>
-      {props.children}
-    </Text>
-  </TouchableOpacity>
-);
+const ButtonOption = (props) => {
+  const { button, text } = buttonOptionStyles;
+
+  return (
+    <TouchableOpacity onPress={props.onPress} style={button}>
+      <Text style={text}>
+        {props.children}
+      </Text>
+    </TouchableOpacity>
+  );
+};
 
 export default ButtonOption;
