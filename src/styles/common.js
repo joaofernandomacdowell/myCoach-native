@@ -14,12 +14,12 @@ const cardStyles = StyleSheet.create({
 // CardSection
 const cardSectionStyles = StyleSheet.create({
   container: {
+    alignItems: 'center',
     borderBottomWidth: 1,
-    padding: 5,
-    justifyContent: 'flex-start',
     flexDirection: 'row',
-    position: 'relative',
-    alignItems: 'center'
+    justifyContent: 'flex-start',
+    padding: 5,
+    position: 'relative'
   }
 });
 
@@ -27,42 +27,42 @@ const cardSectionStyles = StyleSheet.create({
 const inputStyles = StyleSheet.create({
   inputStyle: {
     color: Colors.lightGrey,
-    paddingRight: 5,
-    paddingLeft: 5,
+    flex: 1,
     fontSize: 18,
     lineHeight: 23,
-    flex: 1
+    paddingLeft: 5,
+    paddingRight: 5
   },
   containerStyle: {
+    alignItems: 'center',
     flex: 1,
-    height: 40,
     flexDirection: 'row',
-    alignItems: 'center'
+    height: 40
   }
 });
 
 // Button styles
 const buttonStyles = StyleSheet.create({
   container: {
-    marginTop: 10,
-    justifyContent: 'flex-start',
+    alignItems: 'center',
     flexDirection: 'row',
-    position: 'relative',
-    alignItems: 'center'
+    justifyContent: 'flex-start',
+    marginTop: 10,
+    position: 'relative'
   },
   text: {
     alignSelf: 'center',
     color: Colors.darkBlue,
     fontSize: 20,
     fontWeight: '600',
-    paddingTop: 10,
-    paddingBottom: 10
+    paddingBottom: 10,
+    paddingTop: 10
   },
   button: {
-    flex: 1,
     alignSelf: 'stretch',
     backgroundColor: Colors.lightGreen,
     borderRadius: 1,
+    flex: 1,
     marginLeft: 5,
     marginRight: 5
   }
