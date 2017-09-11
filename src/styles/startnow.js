@@ -1,12 +1,26 @@
 import { StyleSheet } from 'react-native';
 import { Colors } from './constants.js';
 
+// Welcome styles
+const welcomeStyles = StyleSheet.create({
+  container: {
+    alignSelf: 'center',
+    justifyContent: 'center',
+    marginTop: 100
+  },
+  text: {
+    color: Colors.lightGrey,
+    fontSize: 28,
+    textAlign: 'center'
+  }
+});
+
 // Question styles
 const questionStyles = StyleSheet.create({
   container: {
     alignSelf: 'center',
     justifyContent: 'center',
-    marginTop: 160,
+    marginTop: 60,
     width: 300
   },
   text: {
@@ -31,14 +45,15 @@ const optionStyles = StyleSheet.create({
 // Button styles
 const buttonOptionStyles = StyleSheet.create({
   text: {
-    textAlign: 'center',
-    justifyContent: 'center',
     color: Colors.lightGrey,
     fontSize: 16,
+    justifyContent: 'center',
+    paddingBottom: 10,
     paddingTop: 13,
-    paddingBottom: 10
+    textAlign: 'center'
   },
   button: {
+    borderRadius: 2,
     borderWidth: 1,
     borderColor: Colors.lightGreen,
     height: 50,
@@ -48,4 +63,4 @@ const buttonOptionStyles = StyleSheet.create({
   }
 });
 
-export { questionStyles, optionStyles, buttonOptionStyles };
+export { questionStyles, optionStyles, buttonOptionStyles, welcomeStyles };
