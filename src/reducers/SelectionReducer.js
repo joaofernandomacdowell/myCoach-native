@@ -10,7 +10,7 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case SELECTED_OPTION:
-    const { type, option } = action.payload;
+      const { type, option } = action.payload;
       return {
         ...state,
         currQuestionIndex: state.currQuestionIndex + 1,
