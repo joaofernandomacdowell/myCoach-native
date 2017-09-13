@@ -5,6 +5,7 @@ import firebase from 'firebase';
 import ReduxThunk from 'redux-thunk';
 import { View, Text, StyleSheet, StatusBar } from 'react-native';
 import reducers from './reducers';
+import RouterComponent from './Router';
 
 import QuestionSection from './components/startnow/QuestionSection';
 import RegisterForm from './components/startnow/RegisterForm';
@@ -27,10 +28,7 @@ export default class App extends Component {
     const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
     return (
       <Provider store={store}>
-        <View style={styles.viewStyle}>
-          <StatusBar barStyle="light-content" />
-          <RegisterForm />
-        </View>
+        <RouterComponent />
       </Provider>
     );
   }
