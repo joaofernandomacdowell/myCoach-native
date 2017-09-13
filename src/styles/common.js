@@ -68,4 +68,22 @@ const buttonStyles = StyleSheet.create({
   }
 });
 
-export { cardStyles, cardSectionStyles, inputStyles, buttonStyles };
+// ErrorMessage styles
+const errorMessageStyles = StyleSheet.create({
+  container: {
+    marginTop: 10
+  },
+  text: {
+    fontSize: 20,
+    alignSelf: 'center',
+    color: 'red'
+  }
+});
+
+export {
+  cardStyles,
+  cardSectionStyles,
+  inputStyles,
+  buttonStyles,
+  errorMessageStyles
+};
