@@ -62,9 +62,9 @@ class RegisterForm extends Component {
   }
 }
 
-const mapStateToProps = ({ auth, optionSelected }) => {
+const mapStateToProps = ({ auth, optionSelected, userData }) => {
   const { email, password, error, loading } = auth;
-  const { profile } = optionSelected;
+  const { profile } = userData;
 
   return { email, password, error, loading, profile };
 };

@@ -1,6 +1,8 @@
 // ButtonOption actions
 export const SELECTED_OPTION = 'selected_option';
 
+export const PROFILE_UPDATE = 'profile_update';
+
 // RegisterForm actions
 export const EMAIL_CHANGED = 'email_changed';
 export const PASSWORD_CHANGED = 'password_changed';

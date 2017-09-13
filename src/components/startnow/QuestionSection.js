@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import { connect } from 'react-redux';
-import { updateQuestionAndOptions } from '../../actions';
+import { updateQuestionAndOptions, updateProfile } from '../../actions';
 import { Actions } from 'react-native-router-flux';
 
 import Welcome from './Welcome';
@@ -16,15 +16,15 @@ class QuestionSection extends Component {
   }
 
   _onPress(index) {
-    const { type, options, updateQuestionAndOptions, id } = this.props;
-    const option = options[index].toLowerCase();
+    const { type, options, id } = this.props;
+    const selectedOption = options[index].toLowerCase();
 
     if (id !== 4) {
-      updateQuestionAndOptions({ type, option });
-      //updateProfile
+      this.props.updateProfile({ type, selectedOption });
+      this.props.updateQuestionAndOptions();
 
     } else {
-      //updateProfile
+      this.props.updateProfile({ type, selectedOption });
       Actions.registerForm();
     }
   }
@@ -67,4 +67,7 @@ const mapStateToProps = ({ questionnarie, optionSelected }) => {
   };
 };
 
-export default connect(mapStateToProps, { updateQuestionAndOptions })(QuestionSection);
+export default connect(mapStateToProps, {
+  updateQuestionAndOptions,
+  updateProfile
+})(QuestionSection);
