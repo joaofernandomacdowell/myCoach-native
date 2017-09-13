@@ -15,11 +15,8 @@ export const updateProfile = ({ type, selectedOption }) => {
 export const createProfile = (profile) => {
   const { currentUser } = firebase.auth();
 
-  return (dispatch) => {
+  return () => {
     firebase.database().ref(`/users/${currentUser.uid}/profile`)
-      .push({ ...profile })
-      .then(() => {
-        dispatch({ type: PROFILE_CREATE });
-      });
+      .push({ ...profile });
   };
 };
