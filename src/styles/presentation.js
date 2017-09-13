@@ -25,13 +25,11 @@ const presentationTextStyles = StyleSheet.create({
   container: {
     alignItems: 'center',
     flexDirection: 'row',
-    justifyContent: 'center',
-    paddingLeft: 40,
-    paddingRight: 40
+    justifyContent: 'center'
   },
   text: {
     textAlign: 'center',
-    fontSize: 26,
+    fontSize: 28,
     color: Colors.lightGrey
   }
 });
@@ -54,9 +52,9 @@ const loginButtonStyles = StyleSheet.create({
   },
   loginText: {
     color: Colors.lightGrey,
-    fontSize: 24,
+    fontSize: 18,
     fontWeight: '500',
-    paddingTop: 10,
+    paddingTop: 15,
     textAlign: 'center'
   }
 });
@@ -70,9 +68,9 @@ const startButtonStyles = StyleSheet.create({
   },
   startText: {
     color: Colors.darkGreen,
-    fontSize: 24,
+    fontSize: 18,
     fontWeight: '500',
-    paddingTop: 10,
+    paddingTop: 15,
     textAlign: 'center'
   }
 });

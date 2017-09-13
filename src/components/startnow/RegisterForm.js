@@ -35,7 +35,8 @@ class RegisterForm extends Component {
     const { email, password, profile } = this.props;
 
     this.props.loginUser({ email, password });
-    this.props.createProfile(profile);
+    // REVIEW CREATE PROFILE. MULTIPLE WARNINGS
+    // this.props.createProfile(profile);
   }
 
   _renderErrorMessage() {
