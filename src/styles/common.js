@@ -15,7 +15,6 @@ const cardStyles = StyleSheet.create({
 const cardSectionStyles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    borderBottomWidth: 1,
     flexDirection: 'row',
     justifyContent: 'flex-start',
     padding: 5,
