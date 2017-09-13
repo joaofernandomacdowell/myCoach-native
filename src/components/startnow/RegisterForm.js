@@ -9,20 +9,24 @@ class RegisterForm extends Component {
   constructor(props) {
     super(props);
 
-    this.onEmailChange = this.onEmailChange.bind(this);
-    this.onPasswordChange = this.onPasswordChange.bind(this);
-    this.onButtonPress = this.onButtonPress.bind(this);
+    this._onEmailChange = this._onEmailChange.bind(this);
+    this._onPasswordChange = this._onPasswordChange.bind(this);
+    this._onButtonPress = this._onButtonPress.bind(this);
   }
 
-  onEmailChange(text) {
+  componentDidMount() {
+    console.log(this.props.profile);
+  }
+
+  _onEmailChange(text) {
     this.props.emailChanged(text);
   }
 
-  onPasswordChange(text) {
+  _onPasswordChange(text) {
     this.props.passwordChanged(text);
   }
 
-  onButtonPress() {
+  _onButtonPress() {
     const { email, password} = this.props;
 
     this.props.createUser({ email, password });
@@ -35,7 +39,7 @@ class RegisterForm extends Component {
         <CardSection>
           <Input
             placeholder="Email"
-            onChangeText={this.onEmailChange}
+            onChangeText={this._onEmailChange}
             value={this.props.email}
           />
         </CardSection>
@@ -45,12 +49,12 @@ class RegisterForm extends Component {
           <Input
             secureTextEntry
             placeholder="Password"
-            onChangeText={this.onPasswordChange}
+            onChangeText={this._onPasswordChange}
             value={this.props.password}
           />
         </CardSection>
 
-        <Button onPress={this.onButtonPress}>
+        <Button onPress={this._onButtonPress}>
           Register
         </Button>
       </Card>
@@ -58,28 +62,13 @@ class RegisterForm extends Component {
   }
 }
 
-const mapStateToProps = ({ auth }) => {
+const mapStateToProps = ({ auth, optionSelected }) => {
   const { email, password, error, loading } = auth;
-  return { email, password, error, loading };
+  const { profile } = optionSelected;
+
+  return { email, password, error, loading, profile };
 };
 
 export default connect(mapStateToProps, {
   emailChanged, passwordChanged, createUser
 })(RegisterForm);
-
-// const firstName = (
-//   <CardSection>
-//     <Input
-//       placeholder="First Name"
-//       onChangeText={this.onEmailChange}
-//       value={this.props.firstName}
-//     />
-//   </CardSection>
-//
-//   <CardSection>
-//     <Input
-//       placeholder="Last Name"
-//       value={this.props.lastName}
-//     />
-//   </CardSection>
-// );
