@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import { View, Text, Alert } from 'react-native';
 import { connect } from 'react-redux';
-import { emailChanged, passwordChanged, createUser } from '../../actions';
+import {
+  emailChanged,
+  passwordChanged,
+  loginUser,
+  createProfile
+} from '../../actions';
 import { Card, CardSection, Button, Input } from '../common';
 
 
@@ -27,9 +32,10 @@ class RegisterForm extends Component {
   }
 
   _onButtonPress() {
-    const { email, password} = this.props;
+    const { email, password, profile } = this.props;
 
-    this.props.createUser({ email, password });
+    this.props.loginUser({ email, password });
+    this.props.createProfile(profile);
   }
 
   render() {
@@ -70,5 +76,5 @@ const mapStateToProps = ({ auth, optionSelected, userData }) => {
 };
 
 export default connect(mapStateToProps, {
-  emailChanged, passwordChanged, createUser
+  emailChanged, passwordChanged, loginUser, createProfile
 })(RegisterForm);
