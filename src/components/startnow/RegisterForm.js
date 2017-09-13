@@ -7,7 +7,7 @@ import {
   loginUser,
   createProfile
 } from '../../actions';
-import { Card, CardSection, Button, Input } from '../common';
+import { Card, CardSection, Button, Input, ErrorMessage } from '../common';
 
 
 class RegisterForm extends Component {
@@ -38,6 +38,12 @@ class RegisterForm extends Component {
     this.props.createProfile(profile);
   }
 
+  _renderErrorMessage() {
+    return this.props.error !== ''
+    ? <ErrorMessage>{this.props.error}</ErrorMessage>
+    : null
+  }
+
   render() {
     return (
       <Card>
@@ -63,6 +69,9 @@ class RegisterForm extends Component {
         <Button onPress={this._onButtonPress}>
           Register
         </Button>
+
+        {/* Error Message */}
+        {this._renderErrorMessage()}
       </Card>
     );
   }
