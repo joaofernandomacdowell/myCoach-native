@@ -30,7 +30,9 @@ const presentationTextStyles = StyleSheet.create({
   text: {
     textAlign: 'center',
     fontSize: 28,
-    color: Colors.lightGrey
+    color: Colors.lightGrey,
+    paddingLeft: 15,
+    paddingRight: 15
   }
 });
 
