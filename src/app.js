@@ -6,22 +6,14 @@ import ReduxThunk from 'redux-thunk';
 import { View, Text, StyleSheet, StatusBar } from 'react-native';
 import reducers from './reducers';
 import RouterComponent from './Router';
+import { firebaseConfig } from '../config';
 
 import QuestionSection from './components/startnow/QuestionSection';
 import RegisterForm from './components/startnow/RegisterForm';
 
 export default class App extends Component {
   componentWillMount() {
-    const config = {
-      apiKey: "AIzaSyB5SnDU3g75qpJZqPjFr20dWpvy2NbdoB4",
-      authDomain: "mycoachnative.firebaseapp.com",
-      databaseURL: "https://mycoachnative.firebaseio.com",
-      projectId: "mycoachnative",
-      storageBucket: "",
-      messagingSenderId: "823458865722"
-    };
-
-    firebase.initializeApp(config);
+    firebase.initializeApp(firebaseConfig);
   }
 
   render() {
