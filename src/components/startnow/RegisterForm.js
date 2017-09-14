@@ -60,6 +60,24 @@ class RegisterForm extends Component {
   render() {
     return (
       <Card>
+        {/* First Name */}
+        <CardSection>
+          <Input
+            placeholder="First Name"
+            onChangeText={this._onFirstNameChange}
+            value={this.props.firstName}
+          />
+        </CardSection>
+
+        {/* Last Name */}
+        <CardSection>
+          <Input
+            placeholder="Last Name"
+            onChangeText={this._onLastNameChange}
+            value={this.props.lastName}
+          />
+        </CardSection>
+
         {/* Email */}
         <CardSection>
           <Input
@@ -76,24 +94,6 @@ class RegisterForm extends Component {
             placeholder="Password"
             onChangeText={this._onPasswordChange}
             value={this.props.password}
-          />
-        </CardSection>
-
-        {/* First Name */}
-        <CardSection>
-          <Input
-            placeholder="First Name"
-            onChangeText={this._onFirstNameChange}
-            value={this.props.firstName}
-          />
-        </CardSection>
-
-        {/* Last Name */}
-        <CardSection>
-          <Input
-            placeholder="Last Name"
-            onChangeText={this._onLastNameChange}
-            value={this.props.lastName}
           />
         </CardSection>
 
