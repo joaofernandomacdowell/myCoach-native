@@ -4,6 +4,8 @@ export const SELECTED_OPTION = 'selected_option';
 // Profile actions
 export const PROFILE_UPDATE = 'profile_update';
 export const PROFILE_CREATE = 'profile_create';
+export const FIRST_NAME_CHANGED = 'first_name_changed';
+export const LAST_NAME_CHANGED = 'last_name_changed';
 
 // RegisterForm actions
 export const EMAIL_CHANGED = 'email_changed';

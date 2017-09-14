@@ -5,7 +5,9 @@ import {
   emailChanged,
   passwordChanged,
   loginUser,
-  createProfile
+  createProfile,
+  firstNameChanged,
+  lastNameChanged
 } from '../../actions';
 import { Card, CardSection, Button, Input, ErrorMessage } from '../common';
 
@@ -17,6 +19,8 @@ class RegisterForm extends Component {
     this._onEmailChange = this._onEmailChange.bind(this);
     this._onPasswordChange = this._onPasswordChange.bind(this);
     this._onButtonPress = this._onButtonPress.bind(this);
+    this._onFirstNameChange = this._onFirstNameChange.bind(this);
+    this._onLastNameChange = this._onLastNameChange.bind(this);
   }
 
   componentDidMount() {
@@ -31,12 +35,20 @@ class RegisterForm extends Component {
     this.props.passwordChanged(text);
   }
 
+  _onFirstNameChange(text) {
+    this.props.firstNameChanged(text);
+  }
+
+  _onLastNameChange(text) {
+    this.props.lastNameChanged(text);
+  }
+
   _onButtonPress() {
-    const { email, password, profile } = this.props;
+    const { email, password, profile, firstName, lastName } = this.props;
+    const name = `${firstName} ${lastName}`;
 
     this.props.loginUser({ email, password });
-    // REVIEW CREATE PROFILE. MULTIPLE WARNINGS
-    // this.props.createProfile(profile);
+    this.props.createProfile(profile, name);
   }
 
   _renderErrorMessage() {
@@ -67,6 +79,24 @@ class RegisterForm extends Component {
           />
         </CardSection>
 
+        {/* First Name */}
+        <CardSection>
+          <Input
+            placeholder="First Name"
+            onChangeText={this._onFirstNameChange}
+            value={this.props.firstName}
+          />
+        </CardSection>
+
+        {/* Last Name */}
+        <CardSection>
+          <Input
+            placeholder="Last Name"
+            onChangeText={this._onLastNameChange}
+            value={this.props.lastName}
+          />
+        </CardSection>
+
         <Button onPress={this._onButtonPress}>
           Register
         </Button>
@@ -80,11 +110,16 @@ class RegisterForm extends Component {
 
 const mapStateToProps = ({ auth, optionSelected, userData }) => {
   const { email, password, error, loading } = auth;
-  const { profile } = userData;
+  const { profile, firstName, lastName } = userData;
 
-  return { email, password, error, loading, profile };
+  return { email, password, error, loading, profile , firstName, lastName };
 };
 
 export default connect(mapStateToProps, {
-  emailChanged, passwordChanged, loginUser, createProfile
+  emailChanged,
+  passwordChanged,
+  firstNameChanged,
+  lastNameChanged,
+  loginUser,
+  createProfile
 })(RegisterForm);
