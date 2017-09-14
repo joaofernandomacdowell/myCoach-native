@@ -73,7 +73,7 @@ const errorMessageStyles = StyleSheet.create({
     marginTop: 10
   },
   text: {
-    fontSize: 20,
+    fontSize: 16,
     alignSelf: 'center',
     color: 'red'
   }
