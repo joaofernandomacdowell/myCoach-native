@@ -22,33 +22,30 @@ export const passwordChanged = (text) => {
   };
 };
 
-export const loginUser = ({ email, password }) => {
+export const loginUser = ({ email, password, name, profile }) => {
   return (dispatch) => {
     dispatch({ type: LOGIN_USER });
 
-    firebase.auth().signInWithEmailAndPassword(email, password)
-      .then(user => loginUserSuccess(dispatch, user))
-      .catch(() => {
-
-        firebase.auth().createUserWithEmailAndPassword(email, password)
-          .then(user => loginUserSuccess(dispatch, user))
-          .catch((error) => {
-            console.log(error);
-            loginUserFail(dispatch, error.message)
-          });
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then(user => saveNameAndProfile(name, profile))
+      .catch((error) => {
+        console.log(error);
+        loginUserFail(dispatch, error.message)
       });
   };
+};
+
+// TODO: add catch statment in saveNameAndProfile Promise
+const saveNameAndProfile = (name, profile) => {
+  const { currentUser } = firebase.auth();
+
+  firebase.database().ref(`/users/${currentUser.uid}/name`)
+  .push(name);
+  firebase.database().ref(`/users/${currentUser.uid}/profile`)
+    .push(profile);
 };
 
 // Helper (FAIL)
 const loginUserFail = (dispatch, errorMessage) => {
   dispatch({ type: LOGIN_USER_FAIL, payload: errorMessage });
-};
-
-// Helper (SUCCESS)
-const loginUserSuccess = (dispatch, user) => {
-  dispatch({
-    type: LOGIN_USER_SUCCESS,
-    payload: user
-  });
 };

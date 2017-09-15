@@ -47,8 +47,7 @@ class RegisterForm extends Component {
     const { email, password, profile, firstName, lastName } = this.props;
     const name = `${firstName} ${lastName}`;
 
-    this.props.loginUser({ email, password });
-    this.props.createProfile(profile, name);
+    this.props.loginUser({ email, password, name, profile });
   }
 
   _renderErrorMessage() {
